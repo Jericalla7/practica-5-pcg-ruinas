@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dlmfjgh104wjx"]
+
+[ext_resource type="Script" uid="uid://ccd3oo1uk7k6w" path="res://procedural_level_generator.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cubrhgxjaqv18" path="res://floor_scene.tscn" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bfnjh7ywka1gh" path="res://wall_scene.tscn" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://da0vvlvqxa41l" path="res://start_scene.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://vlrfw35jh6fr" path="res://goal_scene.tscn" id="4_272bh"]
+[ext_resource type="PackedScene" uid="uid://b5lre4pk3bmht" path="res://reward_scene.tscn" id="5_5vw27"]
+
+[sub_resource type="Environment" id="Environment_rhpe6"]
+
+[node name="LevelGenerator" type="Node3D" unique_id=473262124]
+script = ExtResource("1_ig7tw")
+seed_value = 99999
+floor_scene = ExtResource("2_lquwl")
+wall_scene = ExtResource("3_7mycd")
+start_scene = ExtResource("4_7mycd")
+goal_scene = ExtResource("4_272bh")
+reward_scene = ExtResource("5_5vw27")
+
+[node name="Generated" type="Node3D" parent="." unique_id=1908314042]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=98679236]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 10, 20, 15)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=93626258]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=241411746]
+environment = SubResource("Environment_rhpe6")
